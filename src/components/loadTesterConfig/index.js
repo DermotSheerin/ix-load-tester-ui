@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import {useForm} from "react-hook-form";
 import { setConfigCycle } from "../api/loadTester-api"
 import TenantList from '../tenantList'
+import AddTenantButton from '../buttons/addTenantButton'
 
 // https://medium.com/swlh/usereducer-form-example-16675fa60229
 
@@ -29,6 +30,16 @@ const reducerTenantList = (state, action) => {
         [action.field]: action.payload      
         };
       return newState; // return the modified newState array that contains the field change
+    case "add-tenant":
+      const newTenant = [...state, {
+        TenantId: "",
+        Domain: "",
+        AgentRangeStart: "",
+        AgentRangeEnd: "",
+        AgentPassword: "",
+        TransferServiceId: ""
+      }];
+      return newTenant;
     default:
       return state;
   }
@@ -65,6 +76,10 @@ const LoadTesterConfig = ({ data }) => {
 
   const updateTenantList = (e, i) => {
     handleTextChangeTenantList(e, "tenantList-update", i)
+  };
+
+  const addTenant = (e) => {
+    handleTextChangeTenantList(e, "add-tenant")
   };
 
 
@@ -454,7 +469,10 @@ const LoadTesterConfig = ({ data }) => {
               </div>
             </div>
           </div>
+
+          <AddTenantButton addTenant={addTenant} />
           <TenantList data={stateTenantList} updateTenantList={updateTenantList} />
+
           <div className="form-group">
             <button type="submit" className="btn-lg btn-primary btn-block">
               Submit

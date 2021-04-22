@@ -12,7 +12,6 @@ const WebsocketStats = () => {
   // retrieve SUT IP and Port from chatStats-api 
   const ENDPOINT = `http://${baseIP}:${port}/`;
 
-
   // connect to the socket server on component mount with useEffect. Then, we save each new incoming message in the component's state.
   useEffect(() => {
     const socket = socketIOClient(ENDPOINT);

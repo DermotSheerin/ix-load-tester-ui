@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Chat Generator</h1>
+      <h1>IX Load Tester Configurator</h1>
 
     </div>
   );

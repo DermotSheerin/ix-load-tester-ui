@@ -18,6 +18,7 @@ const LoadTesterConfig = ({ data }) => {
   const handleTextChange = (e, type, i) => {
     dispatch({
       type: type,
+      payloadType: e.target.type,
       field: e.target.name,
       payload: e.target.value,
       index: i,
@@ -27,11 +28,22 @@ const LoadTesterConfig = ({ data }) => {
   const handleTextChangeTenantList = (e, type, i) => {
     dispatchTenantList({
       type: type,
+      payloadType: e.target.type,
       field: e.target.name,
       payload: e.target.value,
       index: i
     })
   }
+
+  // const handleTextChangeTenantListTypeInteger = (e, type, i) => {
+
+  //   dispatchTenantList({
+  //     type: type,
+  //     field: e.target.name,
+  //     payload: Number(e.target.value),
+  //     index: i
+  //   })
+  // }
   
   const updateTenantConfig = (e) => {
     handleTextChange(e, "handle-input")
@@ -40,6 +52,10 @@ const LoadTesterConfig = ({ data }) => {
   const updateTenantList = (e, i) => {
     handleTextChangeTenantList(e, "tenantList-update", i)
   };
+
+  // const updateTenantListTypeInteger = (e, i) => {
+  //   handleTextChangeTenantListTypeInteger(e, "tenantList-update", i)
+  // };
 
   const addTenant = (e) => {
     handleTextChangeTenantList(e, "add-tenant")

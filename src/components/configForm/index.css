@@ -1,0 +1,11 @@
+.radio-label-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .radio-label-options {
+    width: 30%;
+    text-align: center;
+    /* padding-left: 105px; */
+    padding-left: 33.33%
+  }

@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import "./index.css"
 import {useForm} from "react-hook-form";
 import { setConfigCycle } from "../api/loadTester-api"
 import TenantList from '../tenantList'
@@ -34,30 +35,54 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                   />
                 </div>
                 <div className="form-group col-4">
-                <label>
+                <label className="radio-label-title">
                   UCEnabled
                 </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder=""
-                    required="required"
-                    name="UCEnabled"
-                    value={state.UCEnabled}
-                    onChange={(e) => updateTenantConfig(e)}
-                    ref={register({
-                      required: "UCEnabled is required",
-                      minLength: {
-                        value: 1,
-                        message: "UCEnabled is too short, minimum length is 1",
-                      },
-                    })}
-                  />
+                  <label className="radio-label-options">
+                    <input
+                      type="radio"
+                      className="form-control"
+                      placeholder=""
+                      required="required"
+                      name="UCEnabled"
+                      value="true"
+                      checked={state.UCEnabled === true}
+                      onChange={(e) => updateTenantConfig(e)}
+                      ref={register({
+                        required: "UCEnabled is required",
+                        minLength: {
+                          value: 1,
+                          message: "UCEnabled is too short, minimum length is 1",
+                        },
+                      })}
+                    />
+                    True
+                    </label>
+                    <label className="radio-label-options">
+                      <input
+                        type="radio"
+                        className="form-control"
+                        placeholder=""
+                        required="required"
+                        name="UCEnabled"
+                        value="false"
+                        checked={state.UCEnabled === false}
+                        onChange={(e) => updateTenantConfig(e)}
+                        ref={register({
+                          required: "UCEnabled is required",
+                          minLength: {
+                            value: 1,
+                            message: "UCEnabled is too short, minimum length is 1",
+                          },
+                        })}
+                      />
+                      False
+                    </label>
                 </div> 
                 <div className="form-group col-4">
-                <label>
-                  UCClusterIP
-                </label>
+                  <label>
+                    UCClusterIP
+                  </label>
                   <input
                     type="text"
                     className="form-control"
@@ -103,7 +128,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     StartInteractionIntervalSec
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"
@@ -124,7 +149,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     EndInteractionDelaySec
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"
@@ -147,7 +172,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     RingSeconds
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"
@@ -168,7 +193,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     MinChatMessageDelaySec
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"
@@ -189,7 +214,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     MaxChatMessageDelaySec
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"
@@ -212,7 +237,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     AgentLogoutTimerSec
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"
@@ -233,7 +258,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     MinEmailAnswerDelaySec
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"
@@ -254,7 +279,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     MaxEmailAnswerDelaySec
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"
@@ -277,7 +302,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     AgtInitialiseDelaySecs
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"
@@ -315,55 +340,103 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                     />           
                 </div>
                 <div className="form-group col-4">
-                  <label>
-                     PublishStats
+                  <label className="radio-label-title">
+                  PublishStats
                   </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder=""
-                      required="required"
-                      name="PublishStats"
-                      value={state.PublishStats}
-                      onChange={(e) => updateTenantConfig(e)}
-                      ref={register({
-                        required: "PublishStats is required",
-                        minLength: {
-                          value: 1,
-                          message: "PublishStats is too short, minimum length is 1",
-                        },
-                      })}
-                    />           
+                    <label className="radio-label-options">
+                      <input
+                        type="radio"
+                        className="form-control"
+                        placeholder=""
+                        required="required"
+                        name="PublishStats"
+                        value="true"
+                        checked={state.PublishStats === true}
+                        onChange={(e) => updateTenantConfig(e)}
+                        ref={register({
+                          required: "PublishStats is required",
+                          minLength: {
+                            value: 1,
+                            message: "PublishStats is too short, minimum length is 1",
+                          },
+                        })}
+                      />
+                      True
+                      </label>
+                      <label className="radio-label-options">
+                        <input
+                          type="radio"
+                          className="form-control"
+                          placeholder=""
+                          required="required"
+                          name="PublishStats"
+                          value="false"
+                          checked={state.PublishStats === false}
+                          onChange={(e) => updateTenantConfig(e)}
+                          ref={register({
+                            required: "PublishStats is required",
+                            minLength: {
+                              value: 1,
+                              message: "PublishStats is too short, minimum length is 1",
+                            },
+                          })}
+                        />
+                        False
+                      </label>            
                 </div>
               </div>
               <div className="form-row">
                 <div className="form-group col-4">
-                  <label>
+                  <label className="radio-label-title">
                     EnableSdkLogs
                   </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder=""
-                      required="required"
-                      name="EnableSdkLogs"
-                      value={state.EnableSdkLogs}
-                      onChange={(e) => updateTenantConfig(e)}
-                      ref={register({
-                        required: "EnableSdkLogs is required",
-                        minLength: {
-                          value: 1,
-                          message: "EnableSdkLogs is too short, minimum length is 1",
-                        },
-                      })}
-                    />           
+                    <label className="radio-label-options">
+                      <input
+                        type="radio"
+                        className="form-control"
+                        placeholder=""
+                        required="required"
+                        name="EnableSdkLogs"
+                        value="true"
+                        checked={state.EnableSdkLogs === true}
+                        onChange={(e) => updateTenantConfig(e)}
+                        ref={register({
+                          required: "EnableSdkLogs is required",
+                          minLength: {
+                            value: 1,
+                            message: "EnableSdkLogs is too short, minimum length is 1",
+                          },
+                        })}
+                      />
+                      True
+                      </label>
+                      <label className="radio-label-options">
+                      <input
+                        type="radio"
+                        className="form-control"
+                        placeholder=""
+                        required="required"
+                        name="EnableSdkLogs"
+                        value="false"
+                        checked={state.EnableSdkLogs === false}
+                        onChange={(e) => updateTenantConfig(e)}
+                        ref={register({
+                          required: "EnableSdkLogs is required",
+                          minLength: {
+                            value: 1,
+                            message: "EnableSdkLogs is too short, minimum length is 1",
+                          },
+                        })}
+                      />
+                      False
+                      </label>         
                 </div>
                 <div className="form-group col-4">
                   <label>
                     ClientsPerInstance
                   </label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control"
                       placeholder=""
                       required="required"

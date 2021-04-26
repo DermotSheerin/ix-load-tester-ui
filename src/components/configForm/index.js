@@ -1,9 +1,6 @@
-import React, { useReducer } from "react";
+import React from "react";
 import "./index.css"
-import {useForm} from "react-hook-form";
-import { setConfigCycle } from "../api/loadTester-api"
-import TenantList from '../tenantList'
-import AddTenantButton from '../buttons/addTenantButton'
+
 
 
 const ConfigForm = ({state, register, updateTenantConfig}) => {

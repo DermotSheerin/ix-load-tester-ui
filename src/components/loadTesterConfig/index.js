@@ -58,6 +58,7 @@ const LoadTesterConfig = ({ data }) => {
         TenantList: [...stateTenantList]
     }
     const response = await setConfigCycle(payload);
+    // temp std out to report on successful REST call
     response.status = 200 ? console.log(`SUBMIT SUCCESS`) : console.log(`SUBMIT fail`);
   }
 

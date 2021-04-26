@@ -1,3 +1,6 @@
+// onChange event sets all values to strings therefore there are a number of conditionals below to parse st
+
+// convert string values to boolean for payload type radio
 const covertToBool = (payload) => {
   return payload == 'true'
 }

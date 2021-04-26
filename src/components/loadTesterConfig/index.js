@@ -18,6 +18,10 @@ const LoadTesterConfig = ({ data }) => {
 
   const handleTextChange = (e, type, i) => {
     console.log(`inside handleTextChange, payloadType is: ${typeof(e.target.value)} and value is ${e.target.value} }`)
+    // e is the event object passed into the event handler. Actions such as onClick or onSubmit will trigger a change to state which will
+    // cause a re-render which will in turn invoke the functions within the form e.g., onSubmit. This means adding a tenant for example will trigger 
+    // a submit i.e., POST will be sent to backend immediately. e.preventDefault() will prevent a browser reload/refresh.
+    e.preventDefault();
     dispatch({
       type: type,
       payloadType: e.target.type,
@@ -28,6 +32,7 @@ const LoadTesterConfig = ({ data }) => {
   }
 
   const handleTextChangeTenantList = (e, type, i) => {
+    e.preventDefault();
     dispatchTenantList({
       type: type,
       payloadType: e.target.type,
@@ -35,7 +40,6 @@ const LoadTesterConfig = ({ data }) => {
       payload: e.target.value,
       index: i
     })
-    // e.preventDefault();
   }
   
   const updateTenantConfig = (e) => {

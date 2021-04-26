@@ -8,6 +8,7 @@ export const reducerMainConfig = (state, action) => {
         // if payload is a number then parse to an int
         if (action.payloadType === 'number') action.payload = parseInt(action.payload)
         if (action.payloadType === 'radio') action.payload = covertToBool(action.payload)
+        console.log(`inside reducer, payloadType is: ${typeof(action.payload)} and value is ${action.payload} }`)
         return {
           ...state,
           [action.field]: action.payload,

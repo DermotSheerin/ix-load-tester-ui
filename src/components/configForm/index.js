@@ -79,7 +79,7 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                       False
                     </label>
                 </div> 
-                <div className="form-group col-4">
+                {state.UCEnabled ? (<div className="form-group col-4">
                   <label>
                     UCClusterIP
                   </label>
@@ -99,7 +99,8 @@ const ConfigForm = ({state, register, updateTenantConfig}) => {
                       },
                     })}
                   />
-                </div> 
+                </div>) : <div className="form-group col-4"><p className="red-text">UC is Disabled</p></div>
+                  } 
               </div>
               <div className="form-row">
                 <div className="form-group col-4">

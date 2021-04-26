@@ -51,6 +51,9 @@ const LoadTesterConfig = ({ data }) => {
     handleTextChangeTenantList(e, "add-tenant")
   };
 
+  const deleteTenant = (e, i) => {
+    handleTextChangeTenantList(e, "delete-tenant", i)
+  };
 
   const onSubmit = async () => {
     const payload = {
@@ -69,13 +72,13 @@ const LoadTesterConfig = ({ data }) => {
           
           <ConfigForm state={state} register={register} updateTenantConfig={updateTenantConfig}/>
           <AddTenantButton addTenant={addTenant} />
-          <TenantList stateTenantList={stateTenantList} updateTenantList={updateTenantList} register={register} errors={errors}/>
+          <TenantList stateTenantList={stateTenantList} updateTenantList={updateTenantList} deleteTenant={deleteTenant} register={register} errors={errors}/>
 
           <div className="form-group">
             <button type="submit" className="btn-lg btn-primary btn-block">
               Submit
             </button>
-            <button
+            {/* <button
               type="reset"
               className="btn-sm btn-secondary btn-block"
               onClick={() => {
@@ -86,7 +89,7 @@ const LoadTesterConfig = ({ data }) => {
               }}
             >
               Reset
-            </button>
+            </button> */}
           </div> 
         </form>
     </>

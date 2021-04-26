@@ -58,6 +58,10 @@ export const reducerTenantList = (state, action) => {
           TransferServiceId: ""
         }];
         return newTenant;
+      case "delete-tenant":
+        // The filter() method creates a new array with all elements that pass the test implemented by the provided function i.e., 
+        // keep every item except the one we want to remove
+        return state.filter((_, index) => index != action.index);
       default:
         return state;
     }

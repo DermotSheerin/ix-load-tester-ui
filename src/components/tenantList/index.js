@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 
 // https://jasonwatmore.com/post/2020/09/29/react-dynamic-form-example-with-react-hook-form
 
-const TenantList = ({ stateTenantList, updateTenantList, deleteTenant, register, errors  }) => {
+const TenantList = ({ stateTenantList, updateTenantList, deleteTenant, DeleteTenantButton, register, errors  }) => {
 
     // // form validation rules 
     // const validationSchema = Yup.object().shape({
@@ -79,9 +79,7 @@ const TenantList = ({ stateTenantList, updateTenantList, deleteTenant, register,
                                     {/* <div className="invalid-feedback">{errors.tickets?.[i]?.email?.message}</div> */}
                                 </div>
                                 <div className="form-group col-2">
-                                    <button type="remove" onClick={(e) => deleteTenant(e,i)} >
-                                        X
-                                    </button>         
+                                    <DeleteTenantButton deleteTenant={deleteTenant} i={i} />
                                 </div> 
                             </div>
                         </div>

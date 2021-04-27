@@ -3,3 +3,7 @@
     background-color: black;
     color: white;
   }
+
+.button-padding {
+  margin: 20px;
+}

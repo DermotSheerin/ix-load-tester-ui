@@ -1,8 +1,9 @@
 import React, { useReducer } from "react";
 import {useForm} from "react-hook-form";
 import { setConfigCycle } from "../api/loadTester-api"
-import TenantList from '../tenantList'
-import AddTenantButton from '../buttons/addTenantButton'
+import TenantList from "../tenantList"
+import AddTenantButton from "../buttons/addTenantButton"
+import DeleteTenantButton from "../buttons/deleteTenantButton"
 import ConfigForm from '../configForm'
 import { reducerMainConfig, reducerTenantList } from "../hooks/useReducerConfig"
 
@@ -76,7 +77,7 @@ const LoadTesterConfig = ({ data }) => {
           
           <ConfigForm state={state} register={register} updateTenantConfig={updateTenantConfig}/>
           <AddTenantButton addTenant={addTenant} />
-          <TenantList stateTenantList={stateTenantList} updateTenantList={updateTenantList} deleteTenant={deleteTenant} register={register} errors={errors}/>
+          <TenantList stateTenantList={stateTenantList} updateTenantList={updateTenantList} deleteTenant={deleteTenant} DeleteTenantButton={DeleteTenantButton} register={register} errors={errors}/>
 
           <div className="form-group">
             <button type="submit" className="btn-lg btn-primary btn-block">

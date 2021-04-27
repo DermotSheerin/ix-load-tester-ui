@@ -4,8 +4,8 @@ import "./index.css";
 const AddTenantButton = ({addTenant}) => {
 
   return (
-    <button type="submit" className="btn-lg btn-primary btn-block" onClick={addTenant}>
-      Add Tenant
+    <button type="submit" className="btn-lg btn-primary btn-block-small button-padding" onClick={addTenant}>
+      Add New Tenant
     </button>
   );
 };

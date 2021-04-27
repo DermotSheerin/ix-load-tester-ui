@@ -1,8 +1,6 @@
 import React from "react";
 import "./index.css"
 
-
-
 const ConfigForm = ({state, register, updateTenantConfig}) => {
 
   return (

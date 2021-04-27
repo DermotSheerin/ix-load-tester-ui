@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import useConfigCycle from '../hooks/useConfigCycle'
 import useConfigActions from '../hooks/useConfigActions'
 import LoadTesterConfig from '../loadTesterConfig/index.js'
-import TenantList from '../tenantList'
 
 
 const LoadTesterConfigPage = () => {

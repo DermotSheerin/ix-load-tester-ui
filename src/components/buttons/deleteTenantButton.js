@@ -8,7 +8,7 @@ const DeleteTenantButton = ({deleteTenant, i}) => {
   }
 
   return (
-    <button type="submit" className="btn-small btn-primary" onClick={handleClick}>
+    <button type="submit" className="btn-small btn-danger" onClick={handleClick}>
       Delete
     </button>
   );

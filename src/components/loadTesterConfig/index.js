@@ -73,7 +73,7 @@ const LoadTesterConfig = ({ data }) => {
   return (
     <>
         <form className="form bg-light text-dark table-space" onSubmit={handleSubmit(onSubmit)} >
-          <h2 className="text-center">IX Load Tester Configuration</h2>
+          <h2 className="text-center bg-primary text-white">IX Load Tester Configuration</h2>
           
           <ConfigForm state={state} register={register} updateTenantConfig={updateTenantConfig}/>
           <AddTenantButton addTenant={addTenant} />
@@ -83,18 +83,6 @@ const LoadTesterConfig = ({ data }) => {
             <button type="submit" className="btn-lg btn-primary btn-block">
               Submit
             </button>
-            {/* <button
-              type="reset"
-              className="btn-sm btn-secondary btn-block"
-              onClick={() => {
-                reset({
-                  email: "",
-                  password: "",
-                });
-              }}
-            >
-              Reset
-            </button> */}
           </div> 
         </form>
     </>

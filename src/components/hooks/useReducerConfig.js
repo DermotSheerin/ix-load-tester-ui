@@ -1,9 +1,5 @@
-// onChange event sets all values to strings therefore there are a number of conditionals below to parse st
-
-// convert string values to boolean for payload type radio
-// const covertToBool = (payload) => {
-//   return payload == 'true'
-// }
+// onChange event sets all values to strings therefore there are a number of conditionals below 
+// to parse integers, return boolean or no change
 
 const convertPayload = (payloadType, payload) => {
   if (payloadType === 'number') {
@@ -14,9 +10,6 @@ const convertPayload = (payloadType, payload) => {
 }
 
 export const reducerMainConfig = (state, action) => {
-    // if payload is a number then parse to an int
-    // if (action.payloadType === 'number') action.payload = parseInt(action.payload)
-    // if (action.payloadType === 'radio') action.payload = covertToBool(action.payload)
     action.payload = convertPayload(action.payloadType, action.payload)
     console.log(`inside reducer, payloadType is: ${typeof(action.payload)} and value is ${action.payload} }`)
 
@@ -32,8 +25,6 @@ export const reducerMainConfig = (state, action) => {
   };
   
 export const reducerTenantList = (state, action) => {
-    // if payload is a number then parse to an int
-    // if (action.payloadType === 'number') action.payload = parseInt(action.payload)
     action.payload = convertPayload(action.payloadType, action.payload);
     console.log(`inside reducer, payloadType is: ${typeof(action.payload)} and value is ${action.payload} }`);
 
@@ -60,7 +51,7 @@ export const reducerTenantList = (state, action) => {
         return newTenant;
       case "delete-tenant":
         // The filter() method creates a new array with all elements that pass the test implemented by the provided function i.e., 
-        // keep every item except the one we want to remove
+        // keep every item except the one we want to remove and return this new array
         return state.filter((_, index) => index != action.index);
       default:
         return state;

@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import {useForm} from "react-hook-form";
 import { setConfigCycle } from "../api/loadTester-api"
 import TenantList from "../tenantList"
@@ -13,7 +13,8 @@ const LoadTesterConfig = ({ data }) => {
 
   const [state, dispatch] = useReducer(reducerMainConfig, data.data);
   const [stateTenantList, dispatchTenantList] = useReducer(reducerTenantList, data.data.TenantList);
-  console.log(`here is actual state: ${typeof(state.UCEnabled)}, ${state.UCEnabled}`)
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const { register, handleSubmit, errors, reset } = useForm();
 
@@ -61,13 +62,18 @@ const LoadTesterConfig = ({ data }) => {
   };
 
   const onSubmit = async () => {
+    // set loader to true on submission
+    setIsLoading(true);
+
+    // for payload create a new array and replace TenantList with latest TenantList state
     const payload = {
         ...state,    
         TenantList: [...stateTenantList]
     }
     const response = await setConfigCycle(payload);
-    // temp std out to report on successful REST call
-    response.status = 200 ? console.log(`SUBMIT SUCCESS`) : console.log(`SUBMIT fail`);
+
+    // disable loader if 200 OK received for submission
+    response.status = 200 && setIsLoading(false);
   }
 
   return (
@@ -80,9 +86,14 @@ const LoadTesterConfig = ({ data }) => {
           <TenantList stateTenantList={stateTenantList} updateTenantList={updateTenantList} deleteTenant={deleteTenant} DeleteTenantButton={DeleteTenantButton} register={register} errors={errors}/>
 
           <div className="form-group">
+            { isLoading ? 
+            <button type="submit" className="btn-lg btn-danger btn-block">
+              Submitting ....
+            </button> 
+            :
             <button type="submit" className="btn-lg btn-primary btn-block">
               Submit
-            </button>
+            </button>}
           </div> 
         </form>
     </>

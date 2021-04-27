@@ -12,8 +12,7 @@
     "react-scripts": "3.4.0",
     "react-strap": "0.0.1",
     "reactstrap": "^8.5.1",
-    "socket.io-client": "^3.1.2",
-    "yup": "^0.32.9"
+    "socket.io-client": "^3.1.2"
   },
   "scripts": {
     "start": "set PORT=3001 && react-scripts start",

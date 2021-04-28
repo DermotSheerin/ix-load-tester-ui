@@ -9,7 +9,7 @@ const useConfigCycle = () => {
       setConfig(data);
     });
   }, []);
-  return [config, setConfig];
+  return [config];
 };
 
 export default useConfigCycle;

@@ -1,12 +1,10 @@
 import React from "react";
 import useConfigCycle from '../hooks/useConfigCycle'
-import useConfigActions from '../hooks/useConfigActions'
 import LoadTesterConfig from '../loadTesterConfig/index.js'
 
 
 const LoadTesterConfigPage = () => {
   const [config] = useConfigCycle();
-  // const [actions] = useConfigActions();
 
   return (
     <>

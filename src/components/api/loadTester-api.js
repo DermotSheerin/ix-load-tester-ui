@@ -16,15 +16,21 @@ export const getConfigCycle = async () => {
   )
 };
 
-export const getConfigActions = async () => {
+export const setConfigCycle = async (data) => {
+  return await axios.post(
+    `http://${baseIP}:${port}/cycle`, JSON.stringify(data), config
+  )
+};
+
+export const getConfigAction = async () => {
   return await axios.get(
     `http://${baseIP}:${port}/actions`
   )
 };
 
-export const setConfigCycle = async (data) => {
+export const setConfigAction = async (data) => {
   return await axios.post(
-    `http://${baseIP}:${port}/cycle`, JSON.stringify(data), config
+    `http://${baseIP}:${port}/actions`, JSON.stringify(data), config
   )
 };
 

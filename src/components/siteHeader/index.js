@@ -14,16 +14,20 @@ const SiteHeader = () => {
         </Link>
       </nav>
       
-      {/* <nav className="navbar navbar-expand ">
+      <nav className="navbar navbar-expand ">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link className="nav-link text-white" to="/">
               Load Tester Configuration
             </Link>
           </li>
- 
+          <li className="nav-item">
+            <Link className="nav-link text-white" to="/action">
+              Load Tester Action
+            </Link>
+          </li> 
         </ul>
-      </nav> */}
+      </nav>
     </nav>
   );
 };

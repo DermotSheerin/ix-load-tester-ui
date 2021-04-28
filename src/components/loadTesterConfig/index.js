@@ -79,7 +79,7 @@ const LoadTesterConfig = ({ data }) => {
   return (
     <>
         <form className="form bg-light text-dark table-space" onSubmit={handleSubmit(onSubmit)} >
-          <h2 className="text-center bg-primary text-white">IX Load Tester Configuration</h2>
+          <h2 className="text-center p-2 mb-2 bg-primary text-white margin-top">IX Load Tester Configuration</h2>
           
           <ConfigForm state={state} register={register} updateTenantConfig={updateTenantConfig}/>
           <AddTenantButton addTenant={addTenant} />

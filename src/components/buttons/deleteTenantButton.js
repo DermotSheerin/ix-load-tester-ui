@@ -1,14 +1,17 @@
 import React from "react";
 import "./index.css";
 
-const DeleteTenantButton = ({deleteTenant, i}) => {
-
+const DeleteTenantButton = ({ deleteTenant, i }) => {
   const handleClick = (e) => {
     deleteTenant(e, i);
-  }
+  };
 
   return (
-    <button type="submit" className="btn-small btn-danger" onClick={handleClick}>
+    <button
+      type="submit"
+      className="btn-small btn-danger"
+      onClick={handleClick}
+    >
       Delete
     </button>
   );

@@ -5,7 +5,6 @@
 //   const [response, setResponse] = useState(null);
 //   // const [isLoading, setIsLoading] = useState(false);
 
-  
 //   useEffect((config) => {
 //     // setIsLoading(true);
 //     setConfigCycle(config).then((data) => {

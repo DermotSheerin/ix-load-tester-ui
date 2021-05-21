@@ -1,11 +1,10 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1 >IX Load Tester Configurator</h1>
-
+      <h1>IX Load Tester Configurator</h1>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import SiteHeader from "./components/siteHeader";
 import LoadTesterConfigPage from "./components/pages/loadTesterConfigPage";
-
+import LoadTesterActionPage from "./components/pages/loadTesterActionPage";
 
 // In general, the top component in an app's component hierarchy is primarily concerned with routing
 const App = () => {
@@ -13,20 +13,18 @@ const App = () => {
 
   return (
     <BrowserRouter>
-        <div className="jumbotron">
-          <SiteHeader /> {/* New Header  */}
-          <div className="container">
-                  <Switch>
-                    <Route path="/" component={LoadTesterConfigPage} />
-                    {/* <Route path="/resourceChart" component={ResourceChart} /> */}
-                    {/* <Route path="/" component={ChatStatsPage} /> */}
-                    <Redirect from="*" to="/" />
-                  </Switch>
-          </div>
+      <div className="jumbotron">
+        <SiteHeader /> {/* New Header  */}
+        <div className="container">
+          <Switch>
+            <Route path="/action" component={LoadTesterActionPage} />
+            <Route path="/" component={LoadTesterConfigPage} />
+            <Redirect from="*" to="/" />
+          </Switch>
         </div>
+      </div>
     </BrowserRouter>
   );
-
 };
 
 ReactDOM.render(<App />, document.getElementById("root"));
